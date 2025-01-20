@@ -20,4 +20,4 @@ The file and code can be seen and downloaded from the repository.
 
 The tracks are simply which level you want to play. You can easily see which one you have selected by the small square besides your curser when changing tracks, or by tapping control + space to open a popup.
 
-You can change the ms delay between keypresses on line 186 SetKeyDelay(300, 20) if necessary. 300 being between presses and 20 being the hold duration. Please leave a comment on github if anything is wrong!
+You can change the ms delay between keypresses on line 186 SetKeyDelay(300, 20) if necessary. 300 being between presses and 20 being the hold duration(The values I set should already be near optimal!). Please leave a comment on github if anything is wrong!
