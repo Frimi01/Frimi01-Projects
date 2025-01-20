@@ -17,6 +17,7 @@ The file and code can be seen and downloaded from the repository.
 | Control + Down arrow | Previous Track |
 | Control + Space      | Show Track     |
 | Control + Enter      | Play           |
+| Control + Q          | Exit           |
 
 The tracks are simply which level you want to play. You can easily see which one you have selected by the small square besides your curser when changing tracks, or by tapping control + space to open a popup.
 
