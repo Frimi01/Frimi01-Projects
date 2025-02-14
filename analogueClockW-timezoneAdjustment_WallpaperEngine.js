@@ -1,19 +1,24 @@
+export var scriptProperties = createScriptProperties()
+	.addText({
+		name: 'timezoneAdjustment',
+		label: 'timezone_adjustment',
+		value: '+0'
+	})
+	.finish();
+
 /**
  * Bind this script to the angles property of a layer for a simple 2D rotation.
  */
 
 let rotationSpeed = 0.1;
 
-/**
- * this sets the hour hand 3 hours back. Change this to whatever you want or just 0 if you want a normal clock.
- */
-const timezone = -3
-const timezoneAdjustment = timezone * 30
+
 
 /**
  * @param {Vec3} value
  */
 export function update(value) {
+	const timezoneAdjustment = (parseInt(scriptProperties.timezoneAdjustment, 10) || 0) * 30
 	value.z = (engine.timeOfDay * -720) - timezoneAdjustment;
 	return value;
 }
