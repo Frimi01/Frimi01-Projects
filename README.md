@@ -30,10 +30,10 @@ For now mostly what's stopping me from finishing the browser/website is some bac
 
 # Simple scripts:
 
-## Wallpaper Engine: Improved clock logic with easily modifiable timezones and optional am/pm text. (This should really be default by the editor!) 
+## [Wallpaper Engine: Improved clock logic with easily modifiable timezones and optional am/pm text. (This should really be default by the editor!) ](https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Improved%20Digital%20Clock%20Logic)
 Add a default clock from the engine and tap on the glowing blue gear icon besides the text field. Tap edit script, and copy paste my code in replacing the default one and click OK. All interactions with the script is in the default ui!
 
-## [Wallpaper Engine: Hour hand clock logic with timezone options](https://github.com/Frimi01/Frimi01-Projects/blob/main/analogueClockW-timezoneAdjustment_WallpaperEngine)
+## [Wallpaper Engine: Hour hand clock logic with timezone options](https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Analogue%20clock%20with%20timezone%20adjustment.js)
 I added the simple timezone logic and ui to make easy clocks without needing to code.
 inspired by: https://steamcommunity.com/sharedfiles/filedetails/?id=2107481179 You can easily go there and add his clock to just import this script and get everything out the box. Otherwise you can attach this to anything and have it rotate at the correct rates.
 
