@@ -5,7 +5,7 @@ Here I'll be posting stuff for my projects!
 
 # Projects!
 
-## SawkobanPlayer.ahk
+## [SawkobanPlayer.ahk](https://github.com/Frimi01/Frimi01-Projects/blob/main/Sawkoban%20Player.ahk)
 [For more info on 100% COMPLETING SAWKOBAN with the Sawkoban Player](https://ko-fi.com/post/HOW-TO-BEAT-SAWKOBAN-100-B0B119AUZ0?justpublished=true&alias=HOW-TO-BEAT-SAWKOBAN-100-B0B119AUZ0#shareNewPostModal)
 
 The file and code can be seen and downloaded from the repository. 
@@ -24,3 +24,11 @@ The tracks are simply which level you want to play. You can easily see which one
 You can change the ms delay between keypresses on line 186 SetKeyDelay(300, 20) if necessary. 300 being between presses and 20 being the hold duration(The values I set should already be near optimal!). Please leave a comment on github if anything is wrong!
 
 You're free to use and distrobute any code in this program as long as you credit me. I wrote all the code, and I found all the level inputs from [here](https://steamcommunity.com/sharedfiles/filedetails/?id=1468880175) except 118 which I made myself. 
+
+## Minimalistic webrowser (in development)
+For now mostly what's stopping me from finishing the browser/website is some backend decisions that could impact the expandability and ease of installation. I'll share the project here soon most likely. It is in it's current state completely functional and very easy to use but it's lacking in certain areas I just want to fix and plan out before I would call it complete.
+
+# Simple scripts:
+
+## [Hour hand clock logic with timezone options for WallpaperEngine](https://github.com/Frimi01/Frimi01-Projects/blob/main/analogueClockW-timezoneAdjustment_WallpaperEngine)
+I added the simple timezone logic but original code at: https://steamcommunity.com/sharedfiles/filedetails/?id=2107481179 You can easily go there and add his clock to just import this script and get everything out the box. Otherwise you can attach this to anything and have it rotate at the correct rates.
