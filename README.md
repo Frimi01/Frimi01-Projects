@@ -35,12 +35,14 @@ For now mostly what's stopping me from finishing the browser/website is some bac
 ## Wallpaper Engine: Improved clock logic with easily modifiable timezones and optional am/pm text. (This should really be default by the editor!)
 Add a default clock from the engine and tap on the glowing blue gear icon besides the text field. Tap edit script, and copy paste my code in replacing the default one and click OK. All interactions with the script is in the default ui!
 
-https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Improved%20Digital%20Clock%20Logic.js
-## Wallpaper Engine: Hour hand clock logic with timezone options
+https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Improved%20Digital%20Clock%20Logic.js 
+## Wallpaper Engine: Analogue clock logic with working Timezone Adjustment!
 I added the simple timezone logic and ui to make easy clocks without needing to code. inspired by: [this guy](https://steamcommunity.com/sharedfiles/filedetails/?id=2107481179)
 
-You can easily go there and add his clock to just import this script and get everything out the box. Otherwise you can attach this to anything and have it rotate at the correct rates.
+You can easily go there and add his clock to just import these scripts and get everything out the box. Otherwise you can attach them to anything and have it rotate at the correct rates!
 
 (copy pasting the rotation logic you can easily rotate clocks made by other people for nice aesthetics though that requires a slight bit of manual work)
 
-https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Analogue%20clock%20with%20timezone%20adjustment.js
+The opacity script can be used on anything so don't be afraid to be creative and toggle larger changes of sprites and textures in your envirment based on the time! (might add even more flexibility in the future)
+
+https://github.com/Frimi01/Frimi01-Projects/tree/main/WallpaperEngine/Analogue%20Clock%20Logic
