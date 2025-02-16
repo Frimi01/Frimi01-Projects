@@ -26,6 +26,12 @@ export var scriptProperties = createScriptProperties()
 		label: 'timezone_adjustment',
 		value: '+0'
 	})
+	// Adds 30 minutes if dealing with timezones that need it
+	.addCheckbox({
+		name: 'adjustmentOffset',
+		label: 'has +30 Minutes',
+		value: false
+	})
 	.finish();
 
 /**
@@ -36,26 +42,39 @@ export var scriptProperties = createScriptProperties()
 export function update(value) {
 	const timezoneAdjustment = parseInt(scriptProperties.timezoneAdjustment, 10) || 0;
 	let time = new Date();
-	let hours = time.getHours() + timezoneAdjustment;
+	
+	// Adjust hours
+	time.setHours(time.getHours() + timezoneAdjustment);
 
-	// Ensure hours wrap around correctly
-	hours = (hours + 24) % 24;
+	// Adjust minutes if offset is enabled
+	if (scriptProperties.adjustmentOffset) {
+		time.setMinutes(time.getMinutes() + 30);
+	}
 
-	let amPm = ''
+	// Get updated hours and minutes
+	let hours = time.getHours();
+	let minutes = time.getMinutes();
+
+	// Ensure 12-hour format if needed
+	let amPm = '';
 	if (!scriptProperties.use24hFormat) {
 		amPm = hours >= 12 ? ' PM' : ' AM'; // Determine AM/PM
 		hours = hours % 12 || 12; // Convert to 12-hour format
 	}
 
+	// Format values 
 	hours = ("00" + hours).slice(-2);
-	let minutes = ("00" + time.getMinutes()).slice(-2);
+	minutes = ("00" + minutes).slice(-2);
+
 	value = hours + scriptProperties.delimiter + minutes;
 
+	// Show seconds if enabled
 	if (scriptProperties.showSeconds) {
 		let seconds = ("00" + time.getSeconds()).slice(-2);
 		value += scriptProperties.delimiter + seconds;
 	}
 
-	value += amPm; // Append AM/PM if in 12-hour mode
+	value += amPm; // Add AM/PM text if in 12-hour mode
 	return value;
 }
+
