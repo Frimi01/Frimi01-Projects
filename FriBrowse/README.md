@@ -12,7 +12,7 @@ API_KEY = # your api key
 
 SEARCH_ENGINE_ID = # your search engine id
 
-PORT = # your desired port (To actually work you'll have to change the const at the top of bookmanager.js too)
+PORT = # your desired port (To actually work with something other than 3000 you'll have to change the const at the top of bookmanager.js too)
 
 
 Make a API_KEY and SEARCH_ENGINE_ID on https://console.cloud.google.com with google custom search api
