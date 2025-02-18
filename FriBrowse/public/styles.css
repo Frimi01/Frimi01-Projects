@@ -1,0 +1,101 @@
+/*  //Github (buy me coffee on kofi): https://github.com/Frimi01/Frimi01-Projects
+    styles.css*/
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+
+    display: flex; /* Arrange elements side-by-side */
+    align-items: flex-start; /* Align items to the top */
+
+}
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+.results {
+    margin-top: 20px;
+}
+.result-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.result-link {
+    font-size: 12px;
+    color: gray;
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.loading-message {
+    color: black;
+    margin-bottom: 10px;
+    text-align:left;
+}
+
+
+body { font-family: Arial, sans-serif; }
+.folder { cursor: pointer; font-weight: bold; position: relative; }
+.folder-content { margin-left: -10px; display: none; }
+.bookmark { position: relative; }
+.context-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+.context-menu button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    color:black;
+    padding: 5px;
+    text-align: left;
+    cursor: pointer;
+}
+.context-menu button:hover {
+    background: #f0f0f0;
+}
+
+
+.sidebar {
+    width: 250px; /* Set fixed width for the bookmarks section */
+    min-height: 100vh; /* Stretch it to full screen height */
+    background: #f4f4f4; /* Light background for distinction */
+    padding: 15px;
+    position: fixed; /* Keep it fixed on the left */
+    left: 0;
+    top: 0;
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+.main-content {
+    flex-grow: 1; /* Take up the remaining space */
+    margin-left: -100px; /* Leave space for the sidebar */
+    padding: 20px;
+}

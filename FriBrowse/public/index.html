@@ -1,0 +1,34 @@
+<!--Github (buy me coffee on kofi): https://github.com/Frimi01/Frimi01-Projects
+    FriBrowse.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🔍FriBrowse</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Bookmark Manager -->
+        <div class="sidebar">
+            <h2>Bookmarks</h2>
+            <button onclick="exportBookmarks()">Export</button>
+            <input type="file" id="importFile" onchange="importBookmarks(event)" hidden>
+            <button onclick="document.getElementById('importFile').click()">Import</button>    
+            <ul id="bookmarkTree"></ul>
+            <button onclick="addFolder()">Add Folder</button>
+            <div id="contextMenu" class="context-menu"></div>
+        </div>
+
+        <div class="main-content">
+        <form id="searchForm" class="search-bar">
+            <input type="text" name="q" placeholder="Search..">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="results" class="results"></div>
+    </div>
+    
+
+    <script src="search.js"></script> 
+    <script src="bookmanager.js"></script>
+</body>
+</html>
