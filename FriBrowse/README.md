@@ -7,13 +7,13 @@ This is FriBrowse, a minimalistic website for searching and storing bookmarks!
 
 # How to use with google search api. 
 This program currently looks for a .env file in the same folder as the exported .exe file. Simply make a file with the name .env (nothing before the ".") and enter the following information: 
-
+```.env
 API_KEY = # your api key
 
 SEARCH_ENGINE_ID = # your search engine id
 
 PORT = # your desired port (To actually work with something other than 3000 you'll have to change the const at the top of bookmanager.js too)
-
+```
 
 Make a API_KEY and SEARCH_ENGINE_ID on https://console.cloud.google.com with google custom search api
 
