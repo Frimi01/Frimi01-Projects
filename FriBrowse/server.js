@@ -20,9 +20,9 @@ app.use(express.static(process.cwd() + "/public")); //hosts files in public
 
 //Saves Bookmarks to local file
 app.post('/save-json', (req, res) => {
-  console.log("Received request to save bookmarks:", req.body);
+  console.log("json save requested");
 
-  const data = JSON.stringify(req.body, null, 2); // Format JSON nicely
+  const data = JSON.stringify(req.body, null, 2); // Format JSON 
 
   fs.writeFile('./bookmarks.json', data, (err) => {
     if (err) {
@@ -71,7 +71,7 @@ app.listen(PORT, () => {
 });
 
 
-// Handle exit signals
+// Handle exit signals (I don't really know if I need this but it works!)
 process.on("SIGINT", () => {
   console.log("Shutting down server...");
   server.close(() => {
