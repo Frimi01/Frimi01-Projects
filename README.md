@@ -27,8 +27,12 @@ You're free to use and distrobute any code in this program as long as you credit
 
 https://github.com/Frimi01/Frimi01-Projects/blob/main/Sawkoban%20Player.ahk
 
-## Minimalistic webrowser (in development)
-For now mostly what's stopping me from finishing the browser/website is some backend decisions that could impact the expandability and ease of installation. I'll share the project here soon most likely. It is in it's current state completely functional and very easy to use but it's lacking in certain areas I just want to fix and plan out before I would call it complete.
+## FriBrowse: Minimalistic searching and bookmark solution!
+With no ads or distractions, can easily search the web and store your bookmarks in folders!
+
+The bookmarks are saved to a local json so you can't accidentally delete them by clearing or switching your browser! 
+
+https://github.com/Frimi01/Frimi01-Projects/tree/main/FriBrowse
 
 # Simple scripts:
 

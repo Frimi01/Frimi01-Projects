@@ -1,7 +1,7 @@
 This is FriBrowse, a minimalistic website for searching and storing bookmarks!
 
 # Plans:
-1. Add subfolders to bookmark manager.
+1. ~~Add subfolders to bookmark manager.~~
 2. Drag and drop bookmarks.
 3. Move off google api.
 4. Remake the look while keeping the minimalistic theme.
