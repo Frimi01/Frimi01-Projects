@@ -56,7 +56,7 @@ app.get('/get-api-key', (req, res) => {
 });
 
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
 
     // Open browser depending on OS
@@ -76,6 +76,6 @@ process.on("SIGINT", () => {
   console.log("Shutting down server...");
   server.close(() => {
       console.log("Server closed.");
-      process.exit(0);
+      process.exitCode = 0;
   });
 });

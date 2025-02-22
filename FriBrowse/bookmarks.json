@@ -1,1 +1,31 @@
-[]
+[
+  {
+    "name": "Bookmarks",
+    "folders": [
+      {
+        "name": "Youtube main",
+        "folders": [],
+        "bookmarks": [],
+        "open": true
+      }
+    ],
+    "bookmarks": [
+      {
+        "name": "Youtube markiplier",
+        "url": "https://youtube.com/markiplier"
+      }
+    ],
+    "open": true
+  },
+  {
+    "name": "Studier",
+    "folders": [],
+    "bookmarks": [
+      {
+        "name": "heartland",
+        "url": "https://en.wikipedia.org/wiki/Heartland_(Canadian_TV_series)"
+      }
+    ],
+    "open": true
+  }
+]
