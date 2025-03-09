@@ -8,32 +8,78 @@ config.color_scheme = "Tokyo Night"
 config.hide_tab_bar_if_only_one_tab = true
 config.default_prog = { "pwsh.exe", "-NoLogo" }
 
+local background_state = 1
+local backgroundImg = "" -- put image here (or tap control shift B for the preset backgrounds)
+
+function Toggle_background(window)
+        if background_state == 1 then
+                window:set_config_overrides({
+                        window_background_gradient = {
+                                colors = { "#1a1b26", "#13141c" },
+                                orientation = "Vertical",
+                        },
+                        window_background_image_hsb = {
+                                brightness = 1,
+                                hue = 1,
+                                saturation = 1,
+                        },
+                        window_background_image = nil,
+                        window_background_opacity = 1.0,
+                })
+                background_state = 2
+        elseif background_state == 2 then
+                window:set_config_overrides({
+                        window_background_gradient = {
+                                colors = { "#1a1b26", "#13141c" },
+                                orientation = "Vertical",
+                        },
+                        window_background_image = nil,
+                        window_background_opacity = 0.5,
+                })
+                background_state = 3
+        else
+                window:set_config_overrides({
+                        window_background_gradient = nil,
+                        window_background_image = backgroundImg,
+                        window_background_image_hsb = {
+                                brightness = 0.05,
+                                hue = 1.0,
+                                saturation = 0.9,
+                        },
+                        window_background_opacity = 1.0,
+                })
+                background_state = 1
+        end
+end
+
 -- Keybindings for splitting and navigation
 config.keys = {
-	{ key = "h", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "d", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
-	{ key = "t", mods = "CTRL|SHIFT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+        { key = "h", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+        { key = "g", mods = "CTRL|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+        { key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
+        { key = "t", mods = "CTRL|SHIFT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
 
-	-- Move between panes
-	{ key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Right") },
-	{ key = "UpArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Up") },
-	{ key = "DownArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Down") },
+        -- Move between panes
+        { key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Left") },
+        { key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Right") },
+        { key = "UpArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Up") },
+        { key = "DownArrow", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Down") },
+
+        {
+                key = "B",
+                mods = "CTRL|SHIFT",
+                action = wezterm.action_callback(function(window)
+                        Toggle_background(window)
+                end),
+        },
 }
 
--- Background. (the commented out area is a nice gradient. you can change what's noted out and set opacity to make it appear nicely in front of whatever you have open in the background)
---config.window_background_gradient = {
---  colors = { "#1a1b26", "#13141c" }, -- Dark colors for a subtle gradient
---  orientation = "Vertical", -- Options: "Horizontal", "Vertical", "Radial"
---}
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 } -- Remove gaps
-config.window_background_image = "" -- enter photo path here 
+config.window_background_image = backgroundImg
 config.window_background_image_hsb = {
-	brightness = 0.05,
-	hue = 1.0,
-	saturation = 0.9,
+        brightness = 0.05,
+        hue = 1.0,
+        saturation = 0.9,
 }
-config.window_background_opacity = 1.0
 
 return config
