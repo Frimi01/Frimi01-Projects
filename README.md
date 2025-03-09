@@ -30,7 +30,7 @@ https://github.com/Frimi01/Frimi01-Projects/blob/main/Sawkoban%20Player.ahk
 ## FriBrowse: Minimalistic searching and bookmark solution!
 With no ads or distractions, can easily search the web and store your bookmarks in folders!
 
-The bookmarks are saved to a local json so you can't accidentally delete them by clearing or switching your browser! 
+The bookmarks are saved to a local json so you can't accidentally delete them by clearing or switching your browser! I personally prefer this way of viewing and organizing favorite websites, research materials and notes over the approaches of modern browsers. The appearance is minimalistic (has darkmode) and you can search and add any url with ease!
 
 https://github.com/Frimi01/Frimi01-Projects/tree/main/FriBrowse
 
