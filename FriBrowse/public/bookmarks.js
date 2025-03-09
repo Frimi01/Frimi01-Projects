@@ -56,9 +56,22 @@ class BookmarkManager {
     }
     return folder;
   }
+
+  updateBookmark(property, folderPath, bookmarkIndex) {
+    const folder = this.getFolderByPath(folderPath);
+    if (!folder || !folder.bookmarks[bookmarkIndex]) {
+      return console.error("Error: Bookmark not found.");
+    }
+    const currentValue = folder.bookmarks[bookmarkIndex][property];
+    const newValue = prompt(`Enter new bookmark ${property}:`, currentValue);
+    if (newValue !== null && newValue !== "") {
+      folder.bookmarks[bookmarkIndex][property] = newValue;
+      saveAndRender();
+    }
+  }
 }
 
-//Renders and saves the state of the bookmarks:
+// render logic
 function renderTree() {
   const tree = document.getElementById("bookmarkTree");
   tree.innerHTML = "";
@@ -66,7 +79,6 @@ function renderTree() {
   function renderFolder(folder, folderPath, parentElement) {
     const folderElement = document.createElement("li");
 
-    // Create folder span
     const folderName = document.createElement("span");
     folderName.classList.add("folder");
     folderName.textContent = `📁 ${folder.name}`;
@@ -74,9 +86,16 @@ function renderTree() {
     folderName.oncontextmenu = (event) =>
       showContextMenu(event, "folder", folderPath);
 
+    // set draggable
+    folderName.draggable = true;
+    folderName.ondragstart = (event) =>
+      handleDragStart(event, "folder", folderPath);
+    folderName.ondragover = (event) => handleDragOver(event);
+    folderName.ondrop = (event) => handleDrop(event, folderPath);
+
     folderElement.appendChild(folderName);
 
-    // Create folder content container
+    // folder content container
     const folderContent = document.createElement("ul");
     folderContent.className = "folder-content";
     folderContent.style.display = folder.open ? "block" : "none";
@@ -103,6 +122,13 @@ function renderTree() {
         bookmarkElement.oncontextmenu = (event) =>
           showContextMenu(event, "bookmark", folderPath, bIndex);
 
+        // Make draggable
+        bookmarkElement.draggable = true;
+        bookmarkElement.ondragstart = (event) =>
+          handleDragStart(event, "bookmark", folderPath, bIndex);
+        bookmarkElement.ondragover = (event) => handleDragOver(event);
+        bookmarkElement.ondrop = (event) => handleDrop(event, folderPath);
+
         folderContent.appendChild(bookmarkElement);
       });
     }
@@ -117,122 +143,66 @@ function renderTree() {
   });
 }
 
-// Context menu options:
-function addFolder() {
-  const name = prompt("Enter folder name:");
-  if (name)
-    bookmarkManager.bookmarks.push({
-      name,
-      folders: [],
-      bookmarks: [],
-      open: false,
-    });
-  saveAndRender();
+// main draggable logic
+function handleDragStart(event, type, folderPath, bookmarkIndex = null) {
+  event.dataTransfer.setData("type", type);
+  event.dataTransfer.setData("folderPath", JSON.stringify(folderPath));
+  if (bookmarkIndex !== null) {
+    event.dataTransfer.setData("bookmarkIndex", bookmarkIndex);
+  }
 }
 
-function addSubFolder(folderPath) {
-  const name = prompt("Enter folder name:");
-  if (!name) return;
+function handleDragOver(event) {
+  event.preventDefault();
+}
 
-  let targetFolder = bookmarkManager.getFolderByPath(folderPath);
-  if (!targetFolder || !targetFolder.folders) {
-    console.error("Target folder not found.");
+function handleDrop(event, targetPath) {
+  event.preventDefault();
+
+  const type = event.dataTransfer.getData("type");
+  const sourcePath = JSON.parse(event.dataTransfer.getData("folderPath"));
+
+  if (type === "folder") {
+    moveFolder(sourcePath, targetPath);
+  } else if (type === "bookmark") {
+    const bookmarkIndex = event.dataTransfer.getData("bookmarkIndex");
+    moveBookmark(sourcePath, bookmarkIndex, targetPath);
+  }
+}
+
+function moveFolder(sourcePath, targetPath) {
+  if (targetPath.join(",").startsWith(sourcePath.join(","))) {
+    console.error("Error: Cannot move a folder into itself or its subfolders.");
     return;
   }
 
-  targetFolder.folders.push({ name, folders: [], bookmarks: [], open: false });
+  let sourceFolder = bookmarkManager.getFolderByPath(sourcePath);
+  if (!sourceFolder) return;
+
+  let targetFolder = bookmarkManager.getFolderByPath(targetPath);
+  if (!targetFolder || !targetFolder.folders) return;
+
+  // Remove from source
+  let index = sourcePath[sourcePath.length - 1];
+  bookmarkManager
+    .getFolderByPath(sourcePath.slice(0, -1))
+    .folders.splice(index, 1);
+
+  // Add to target
+  targetFolder.folders.push(sourceFolder);
   saveAndRender();
 }
 
-function renameFolder(folderPath) {
-  let folder = bookmarkManager.getFolderByPath(folderPath);
-  if (!folder) return console.error("Error: Folder not found.");
+function moveBookmark(sourceFolderPath, bookmarkIndex, targetFolderPath) {
+  let sourceFolder = bookmarkManager.getFolderByPath(sourceFolderPath);
+  if (!sourceFolder || !sourceFolder.bookmarks) return;
 
-  const name = prompt("Enter new folder name:", folder.name);
-  if (name) {
-    folder.name = name;
-    saveAndRender();
-  }
-}
+  let bookmark = sourceFolder.bookmarks.splice(bookmarkIndex, 1)[0];
 
-function addBookmark(folderPath) {
-  const name = prompt("Enter bookmark name:");
-  const url = prompt("Enter bookmark URL:");
-  if (!name || !url) return;
+  let targetFolder = bookmarkManager.getFolderByPath(targetFolderPath);
+  if (!targetFolder || !targetFolder.bookmarks) return;
 
-  const targetFolder = bookmarkManager.getFolderByPath(folderPath);
-  if (!targetFolder || !targetFolder.bookmarks) {
-    console.error("Error: Could not find target folder!");
-    return;
-  }
-
-  targetFolder.bookmarks.push({ name, url }); // Add bookmark
-  saveAndRender();
-}
-
-function renameBookmark(folderPath, bookmarkIndex) {
-  const folder = bookmarkManager.getFolderByPath(folderPath);
-  if (!folder || !folder.bookmarks[bookmarkIndex])
-    return console.error("Error: Bookmark not found.");
-
-  const name = prompt(
-    "Enter new bookmark name:",
-    folder.bookmarks[bookmarkIndex].name,
-  );
-  if (name) {
-    folder.bookmarks[bookmarkIndex].name = name;
-    saveAndRender();
-  }
-}
-
-function editBookmarkUrl(folderPath, bookmarkIndex) {
-  let folder = bookmarkManager.getFolderByPath(folderPath);
-  if (!folder || !folder.bookmarks[bookmarkIndex]) return;
-
-  const url = prompt(
-    "Enter new bookmark URL:",
-    folder.bookmarks[bookmarkIndex].url,
-  );
-  if (url) {
-    folder.bookmarks[bookmarkIndex].url = url;
-    saveAndRender();
-  }
-}
-
-function deleteFolder(folderPath) {
-  if (!confirm("Are you sure you want to delete this folder?")) return;
-
-  let parentPath = [...folderPath];
-  let folderIndex = parentPath.pop(); // Get the last index (folder to delete)
-
-  let parentFolder = bookmarkManager.getFolderByPath(parentPath);
-
-  if (parentFolder) {
-    parentFolder.folders.splice(folderIndex, 1); // Remove the folder from its parent's list
-  } else {
-    bookmarkManager.bookmarks.splice(folderIndex, 1); // If it's a top-level folder
-  }
-
-  saveAndRender();
-}
-
-function deleteBookmark(folderPath, bookmarkIndex) {
-  if (!confirm("Are you sure you want to delete this bookmark?")) return;
-
-  const folder = bookmarkManager.getFolderByPath(folderPath);
-  if (!folder || !folder.bookmarks[bookmarkIndex])
-    return console.error("Error: Bookmark not found.");
-
-  folder.bookmarks.splice(bookmarkIndex, 1);
-  saveAndRender();
-}
-
-// Opens and closes the folder:
-function toggleFolder(folderPath) {
-  const folder = bookmarkManager.getFolderByPath(folderPath);
-  if (!folder) return console.error("Folder not found:", folderPath);
-
-  folder.open = !folder.open;
+  targetFolder.bookmarks.push(bookmark);
   saveAndRender();
 }
 
@@ -307,6 +277,104 @@ function showContextMenu(event, type, folderPath, bookmarkIndex = null) {
 document.addEventListener("click", () => {
   document.getElementById("contextMenu").style.display = "none";
 });
+
+// Context menu options:
+function addFolder() {
+  const name = prompt("Enter folder name:");
+  if (name)
+    bookmarkManager.bookmarks.push({
+      name,
+      folders: [],
+      bookmarks: [],
+      open: false,
+    });
+  saveAndRender();
+}
+
+function addSubFolder(folderPath) {
+  const name = prompt("Enter folder name:");
+  if (!name) return;
+
+  let targetFolder = bookmarkManager.getFolderByPath(folderPath);
+  if (!targetFolder || !targetFolder.folders) {
+    console.error("Target folder not found.");
+    return;
+  }
+
+  targetFolder.folders.push({ name, folders: [], bookmarks: [], open: false });
+  saveAndRender();
+}
+
+function renameFolder(folderPath) {
+  let folder = bookmarkManager.getFolderByPath(folderPath);
+  if (!folder) return console.error("Error: Folder not found.");
+
+  const name = prompt("Enter new folder name:", folder.name);
+  if (name) {
+    folder.name = name;
+    saveAndRender();
+  }
+}
+
+function addBookmark(folderPath) {
+  const name = prompt("Enter bookmark name:");
+  const url = prompt("Enter bookmark URL:");
+  if (!name || !url) return;
+
+  const targetFolder = bookmarkManager.getFolderByPath(folderPath);
+  if (!targetFolder || !targetFolder.bookmarks) {
+    console.error("Error: Could not find target folder!");
+    return;
+  }
+
+  targetFolder.bookmarks.push({ name, url }); // Add bookmark
+  saveAndRender();
+}
+
+function renameBookmark(folderPath, bookmarkIndex) {
+  bookmarkManager.updateBookmark("name", folderPath, bookmarkIndex);
+}
+
+function editBookmarkUrl(folderPath, bookmarkIndex) {
+  bookmarkManager.updateBookmark("url", folderPath, bookmarkIndex);
+}
+
+function deleteFolder(folderPath) {
+  if (!confirm("Are you sure you want to delete this folder?")) return;
+
+  let parentPath = [...folderPath];
+  let folderIndex = parentPath.pop(); // Get the last index (folder to delete)
+
+  let parentFolder = bookmarkManager.getFolderByPath(parentPath);
+
+  if (parentFolder) {
+    parentFolder.folders.splice(folderIndex, 1); // Remove the folder from its parent's list
+  } else {
+    bookmarkManager.bookmarks.splice(folderIndex, 1); // If it's a top-level folder
+  }
+
+  saveAndRender();
+}
+
+function deleteBookmark(folderPath, bookmarkIndex) {
+  if (!confirm("Are you sure you want to delete this bookmark?")) return;
+
+  const folder = bookmarkManager.getFolderByPath(folderPath);
+  if (!folder || !folder.bookmarks[bookmarkIndex])
+    return console.error("Error: Bookmark not found.");
+
+  folder.bookmarks.splice(bookmarkIndex, 1);
+  saveAndRender();
+}
+
+// Opens and closes the folder:
+function toggleFolder(folderPath) {
+  const folder = bookmarkManager.getFolderByPath(folderPath);
+  if (!folder) return console.error("Folder not found:", folderPath);
+
+  folder.open = !folder.open;
+  saveAndRender();
+}
 
 // Saves and renders the bookmarks (so I don't forget one when adding the other)
 async function saveAndRender() {
