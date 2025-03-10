@@ -3,8 +3,6 @@ Here I'll be posting stuff for my projects!
 
 [Consider buying me coffe!](https://ko-fi.com/frimi01)
 
-# Projects!
-
 ## SawkobanPlayer.ahk
 [For more info on 100% COMPLETING SAWKOBAN with the Sawkoban Player](https://ko-fi.com/post/HOW-TO-BEAT-SAWKOBAN-100-B0B119AUZ0?justpublished=true&alias=HOW-TO-BEAT-SAWKOBAN-100-B0B119AUZ0#shareNewPostModal)
 
@@ -35,12 +33,14 @@ The bookmarks are saved to a local json so you can't accidentally delete them by
 https://github.com/Frimi01/Fribrowse
 
 # Simple scripts:
+For other smaller projects that I probably won't move out into it's own repo or that i just don't feel carry the same weight as the stuff above. The word simple might in some cases be misleading
 
-## Wallpaper Engine: Improved clock logic with easily modifiable timezones and optional am/pm text. (This should really be default by the editor!)
+
+## 1.  Wallpaper Engine: Improved clock logic with easily modifiable timezones and optional am/pm text. (This should really be default by the editor!)
 Add a default clock from the engine and tap on the glowing blue gear icon besides the text field. Tap edit script, and copy paste my code in replacing the default one and click OK. All interactions with the script is in the default ui!
 
 https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Improved%20Digital%20Clock%20Logic.js 
-## Wallpaper Engine: Analogue clock logic with working Timezone Adjustment!
+## 2.  Wallpaper Engine: Analogue clock logic with working Timezone Adjustment!
 I added the simple timezone logic and ui to make easy clocks without needing to code. inspired by: [this guy](https://steamcommunity.com/sharedfiles/filedetails/?id=2107481179)
 
 You can easily go there and add his clock to just import these scripts and get everything out the box. Otherwise you can attach them to anything and have it rotate at the correct rates!
