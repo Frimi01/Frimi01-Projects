@@ -55,3 +55,11 @@ You can easily go there and add his clock to just import these scripts and get e
 The opacity script can be used on anything so don't be afraid to be creative and toggle larger changes of sprites and textures in your envirment based on the time! (might add even more flexibility in the future)
 
 https://github.com/Frimi01/Frimi01-Projects/tree/main/WallpaperEngine/Analogue%20Clock%20Logic
+
+
+# Other contributions
+- 
+
+# Possible future projects
+1. A simulation "game" to input different maps and output realistic weather and water current simulations. Dynamic simulation, with maybe support for 2d and 3d maps, and maybe some interactable abilities like adding weather events or artificial currents. (particle based)
+2. 
