@@ -32,6 +32,11 @@ The bookmarks are saved to a local json so you can't accidentally delete them by
 
 https://github.com/Frimi01/Fribrowse
 
+## frim-convert
+A lightweight program for converting and modifying files. Currently, it supports trimming videos using FFmpeg and changing their file type, with plans to add more features like metadata display and additional file operations.
+
+https://github.com/Frimi01/frim-convert
+
 # Simple scripts:
 For other smaller projects that I probably won't move out into it's own repo or that i just don't feel carry the same weight as the stuff above. The word simple might in some cases be misleading
 
