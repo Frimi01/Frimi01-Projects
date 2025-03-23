@@ -37,6 +37,12 @@ A lightweight program for converting and modifying files. Currently, it supports
 
 https://github.com/Frimi01/frim-convert
 
+## Friword-finder (coming soon)
+Very similar to this https://wordfinder.yourdictionary.com/ but adds some features that makes it a lot more practical. Like specifying in more detail where letters within the word you're looking for are so you can search with more percision through a dictionary.
+It will be a command line python program (not website for now)
+
+Not uploaded as while I've build many of the functions that the other websites have + a few others, i want to add a bit more of the unique features that seperates it from the website first.
+
 # Simple scripts:
 For other smaller projects that I probably won't move out into it's own repo or that i just don't feel carry the same weight as the stuff above. The word simple might in some cases be misleading
 
