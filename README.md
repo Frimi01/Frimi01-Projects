@@ -71,10 +71,18 @@ The opacity script can be used on anything so don't be afraid to be creative and
 
 https://github.com/Frimi01/Frimi01-Projects/tree/main/WallpaperEngine/Analogue%20Clock%20Logic
 
+## Div_config
+Wezterm and powershell scripts for my preferred enviroment. More about the different code I write to customize it might be released in the future.
 
 # Other contributions
 - 
 
+# Hobby Focused Projects
+Less useful projects that I want to share because they're cool.
+
+## Simulated Calculator
+Made a calculator by drawing threads and using minimalish logic gates in Virtual Circuit Board. I'll share some of the files soon.
+
 # Possible future projects
-1. A simulation "game" to input different maps and output realistic weather and water current simulations. Dynamic simulation, with maybe support for 2d and 3d maps, and maybe some interactable abilities like adding weather events or artificial currents. (particle based)
-2. 
+- A simulation "game" to input different maps and output realistic weather and water current simulations. Dynamic simulation, with maybe support for 2d and 3d maps, and maybe some interactable abilities like adding weather events or artificial currents. (particle based)
+- Starting a company.
