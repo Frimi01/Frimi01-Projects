@@ -43,6 +43,15 @@ It will be a command line python program (not website for now)
 
 Not uploaded as while I've build many of the functions that the other websites have + a few others, i want to add a bit more of the unique features that seperates it from the website first.
 
+# Minecraft
+Projects relating to Minecraft, including mods, texture packs, and worlds.
+
+## Frimi01Mod_prototype
+This is a Fabric mod that mostly exists for me to try out different stuff and build different features I might seperate into their own more polished mods later. Not originally intended for collaboration.
+
+# Music (coming soon)
+Music files, licenses and projects.
+
 # Simple scripts:
 For other smaller projects that I probably won't move out into it's own repo or that i just don't feel carry the same weight as the stuff above. The word simple might in some cases be misleading
 
