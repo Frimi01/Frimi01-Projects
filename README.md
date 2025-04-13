@@ -92,3 +92,4 @@ Made a calculator by drawing threads and using minimalish logic gates in Virtual
 # Possible future projects
 - A simulation "game" to input different maps and output realistic weather and water current simulations. Dynamic simulation, with maybe support for 2d and 3d maps, and maybe some interactable abilities like adding weather events or artificial currents. (particle based)
 - Starting a company.
+- Online typing competition game
