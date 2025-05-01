@@ -4,7 +4,7 @@ function prompt {
 }
 
 
-# Define the path for storing favorite locations
+# Define the path for storing favorite locations (in windows)
 $FavoriteLocationsFile = "$HOME\Documents\PowerShell\favorites.json"
 
 # Ensure the storage file exists
@@ -76,3 +76,6 @@ Set-Alias jt Jump-To
 # Green text, removes annoying background in dir command
 $PSStyle.FileInfo.Directory = ''
 $PSStyle.FileInfo.Directory = $PSStyle.Foreground.Green
+
+# Makes the complete menu usable in alacritty
+Set-PSReadLineKeyHandler -Key F4 -Function MenuComplete
