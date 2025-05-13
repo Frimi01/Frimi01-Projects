@@ -43,7 +43,7 @@ A lightweight program for converting and modifying files. Currently, it supports
 
 https://github.com/Frimi01/frim-convert
 
-## Friword-finder (coming soon)
+## Friword-finder (not public)
 Very similar to this https://wordfinder.yourdictionary.com/ but adds some features that makes it a lot more practical. Like specifying in more detail where letters within the word you're looking for are so you can search with more percision through a dictionary.
 It will be a command line python program (not website for now)
 
@@ -55,17 +55,14 @@ Projects relating to Minecraft, including mods, texture packs, and worlds.
 ## Frimi01Mod_prototype
 This is a Fabric mod that mostly exists for me to try out different stuff and build different features I might seperate into their own more polished mods later. Not originally intended for collaboration.
 
-# Music (coming soon)
+# Music (coming maybe)
 Music files, licenses and projects.
-
-# Simple scripts:
-For other smaller projects that I probably won't move out into it's own repo or that i just don't feel carry the same weight as the stuff above. The word simple might in some cases be misleading
-
 
 ## 1.  Wallpaper Engine: Improved clock logic with easily modifiable timezones and optional am/pm text. (This should really be default by the editor!)
 Add a default clock from the engine and tap on the glowing blue gear icon besides the text field. Tap edit script, and copy paste my code in replacing the default one and click OK. All interactions with the script is in the default ui!
 
 https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Improved%20Digital%20Clock%20Logic.js 
+
 ## 2.  Wallpaper Engine: Analogue clock logic with working Timezone Adjustment!
 I added the simple timezone logic and ui to make easy clocks without needing to code. inspired by: [this guy](https://steamcommunity.com/sharedfiles/filedetails/?id=2107481179)
 
@@ -78,16 +75,18 @@ The opacity script can be used on anything so don't be afraid to be creative and
 https://github.com/Frimi01/Frimi01-Projects/tree/main/WallpaperEngine/Analogue%20Clock%20Logic
 
 ## Div_config
-Wezterm and powershell scripts for my preferred enviroment. More about the different code I write to customize it might be released in the future.
-
-# Other contributions
-- 
+1. Wezterm
+2. Alacritty (my windows version)
+3. Powershell
 
 # Hobby Focused Projects
 Less useful projects that I want to share because they're cool.
 
-## Simulated Calculator
-Made a calculator by drawing threads and using minimalish logic gates in Virtual Circuit Board. I'll share some of the files soon.
+**1. Simulated Calculator**
+
+Made a calculator by drawing threads and using minimalish logic gates in Virtual Circuit Board. 
+
+https://github.com/Frimi01/Frimi01-Projects/tree/main/hobbyProjects/Calculator
 
 # Possible future projects
 - A simulation "game" to input different maps and output realistic weather and water current simulations. Dynamic simulation, with maybe support for 2d and 3d maps, and maybe some interactable abilities like adding weather events or artificial currents. (particle based)
