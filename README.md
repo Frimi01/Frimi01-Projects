@@ -5,10 +5,6 @@ Here I'll be posting stuff for my projects!
 
 [Or support me on Patreon! <3](https://patreon.com/Frimi01?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink)
 
-Other social media:
-- [My Youtube channel](https://www.youtube.com/@frimi01)
-- [My Twich channel](https://www.twitch.tv/frimi01)
-
 ## SawkobanPlayer.ahk
 [For more info on 100% COMPLETING SAWKOBAN with the Sawkoban Player](https://ko-fi.com/post/HOW-TO-BEAT-SAWKOBAN-100-B0B119AUZ0?justpublished=true&alias=HOW-TO-BEAT-SAWKOBAN-100-B0B119AUZ0#shareNewPostModal)
 
