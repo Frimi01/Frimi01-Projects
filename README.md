@@ -32,27 +32,28 @@ With no ads or distractions, can easily search the web and store your bookmarks 
 
 The bookmarks are saved to a local json so you can't accidentally delete them by clearing or switching your browser! I personally prefer this way of viewing and organizing favorite websites, research materials and notes over the approaches of modern browsers. The appearance is minimalistic (has darkmode) and you can search and add any url with ease!
 
+<img width="1077" height="696" alt="443042141-31aa2bea-8c97-4561-9842-0d4f2c06ea74" src="https://github.com/user-attachments/assets/1536acad-0872-4156-8db1-048c19ee5b6f" />
+
 https://github.com/Frimi01/Fribrowse
 
 ## frim-convert
-A lightweight program for converting and modifying files. Currently, it supports trimming videos using FFmpeg and changing their file type, with plans to add more features like metadata display and additional file operations.
+A lightweight program for converting and modifying files. Currently, it supports trimming videos using FFmpeg and converting file types (that ffmpeg can change), with plans to add more features like metadata display and additional file operations.
+
+<img width="397" height="304" alt="bilde" src="https://github.com/user-attachments/assets/5146051f-dd19-430d-8cd5-910b38e8cc11" />
+
 
 https://github.com/Frimi01/frim-convert
 
-## Friword-finder (not public)
-Very similar to this https://wordfinder.yourdictionary.com/ but adds some features that makes it a lot more practical. Like specifying in more detail where letters within the word you're looking for are so you can search with more percision through a dictionary.
-It will be a command line python program (not website for now)
+## Friword-finder
+A Java CLI tool for finding words through any given dictonaries. It uses several conversions to different datastructures and searching algorythms for speed and efficiency, and serves well as a tool for games (similar to this) https://wordfinder.yourdictionary.com/
 
-Not uploaded as while I've build many of the functions that the other websites have + a few others, i want to add a bit more of the unique features that seperates it from the website first.
+It is still in development.
 
 # Minecraft
 Projects relating to Minecraft, including mods, texture packs, and worlds.
 
 ## Frimi01Mod_prototype
 This is a Fabric mod that mostly exists for me to try out different stuff and build different features I might seperate into their own more polished mods later. Not originally intended for collaboration.
-
-# Music (coming maybe)
-Music files, licenses and projects.
 
 # Lightweight Projects
 Projects, scripts and files I didn't feel like making it's own repo for:
@@ -89,7 +90,6 @@ Made a calculator by drawing threads and using minimalish logic gates in Virtual
 
 https://github.com/Frimi01/Frimi01-Projects/tree/main/hobbyProjects/Calculator
 
-# Future Ideas
+# Ideas for the future
 - A simulation "game" to input different maps and output realistic weather and water current simulations. Dynamic simulation, with maybe support for 2d and 3d maps, and maybe some interactable abilities like adding weather events or artificial currents. (particle based)
-- Starting a company.
-- Online typing competition game
+- Online typing competition game (maybe one that swaps and makes you practice different layouts?)
