@@ -45,7 +45,7 @@ A lightweight program for converting and modifying files. Currently, it supports
 https://github.com/Frimi01/frim-convert
 
 ## Friword-finder
-A Java CLI tool for finding words through any given dictonaries. It uses several conversions to different datastructures and searching algorythms for speed and efficiency, and serves well as a tool for games (similar to this) https://wordfinder.yourdictionary.com/
+A Java CLI tool for finding words through any given dictionaries. It uses several conversions to different data structures and searching algorithms for speed and efficiency, and serves well as a tool for games (similar to this) https://wordfinder.yourdictionary.com/
 
 It is still in development.
 
@@ -53,13 +53,13 @@ It is still in development.
 Projects relating to Minecraft, including mods, texture packs, and worlds.
 
 ## Frimi01Mod_prototype
-This is a Fabric mod that mostly exists for me to try out different stuff and build different features I might seperate into their own more polished mods later. Not originally intended for collaboration.
+This is a Fabric mod that mostly exists for me to try out different stuff and build different features I might separate into their own more polished mods later. Not originally intended for collaboration.
 
 # Lightweight Projects
 Projects, scripts and files I didn't feel like making it's own repo for:
 
 ### 1.  Wallpaper Engine: Improved clock logic with easily modifiable timezones and optional am/pm text. (This should really be default by the editor!)
-Add a default clock from the engine and tap on the glowing blue gear icon besides the text field. Tap edit script, and copy paste my code in replacing the default one and click OK. All interactions with the script is in the default ui!
+Add a default clock from the engine and tap on the glowing blue gear icon besides the text field. Tap edit script, and copy paste my code in replacing the default one and click OK. All interactions with the script is in the default UI!
 
 https://github.com/Frimi01/Frimi01-Projects/blob/main/WallpaperEngine/Improved%20Digital%20Clock%20Logic.js 
 
