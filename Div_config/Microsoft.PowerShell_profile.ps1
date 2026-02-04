@@ -69,6 +69,22 @@ function Complete-LocationAlias {
 # Register autocompletion for Jump-To function
 Register-ArgumentCompleter -CommandName Jump-To -ParameterName Alias -ScriptBlock ${function:Complete-LocationAlias}
 
+function List-DirectoriesRecursive {
+    param(
+        [int]$Depth = 1,
+        [switch]$Files
+    )
+    $Depth--
+
+    $params = @{
+        Recurse = $true
+        Name    = $true
+        Depth   = $Depth
+    }
+
+    if ($Files) { $params.File = $true } else { $params.Directory = $true }
+    Get-ChildItem @params
+}
 
 Set-Alias whereami Get-Location
 Set-Alias jt Jump-To
