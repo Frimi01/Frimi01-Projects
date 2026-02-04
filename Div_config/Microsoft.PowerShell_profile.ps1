@@ -88,6 +88,9 @@ function List-DirectoriesRecursive {
 
 Set-Alias whereami Get-Location
 Set-Alias jt Jump-To
+Set-Alias touch New-Item
+Set-Alias dirs List-DirectoriesRecursive
+Set-Alias alias-jt Add-LocationAlias
 
 # Green text, removes annoying background in dir command
 $PSStyle.FileInfo.Directory = ''
