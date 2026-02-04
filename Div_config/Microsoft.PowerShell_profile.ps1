@@ -1,6 +1,6 @@
 function prompt {
     $currentFolder = Split-Path -Leaf (Get-Location)
-    return "$($PSStyle.Foreground.Cyan)[$currentFolder]$($PSStyle.Reset) " + $(if ($nestedPromptLevel -ge 1) { '>> ' } else { '> ' })
+    return "$($PSStyle.Foreground.Cyan)[$currentFolder]$($PSStyle.Reset) " + $(if ($nestedPromptLevel -ge 2) { '>> ' } else { '> ' })
 }
 
 
