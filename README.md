@@ -79,6 +79,8 @@ https://github.com/Frimi01/Frimi01-Projects/tree/main/WallpaperEngine/Analogue%2
 2. Alacritty (my windows version)
 3. Powershell
 
+I reccomend linking powershell to C:\Program Files\PowerShell\7\Microsoft.PowerShell_profile.ps1 rather than $HOME\Documents\PowerShell so that the profile loads regardless of user and - depending on how your host is configured - when running as administrator.
+
 https://github.com/Frimi01/Frimi01-Projects/tree/main/Div_config
 
 # Hobby Focused Projects
