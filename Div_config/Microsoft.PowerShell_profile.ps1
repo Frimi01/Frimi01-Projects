@@ -5,7 +5,7 @@ function prompt {
 
 
 # Define the path for storing favorite locations (in windows)
-$FavoriteLocationsFile = "$HOME\Documents\PowerShell\favorites.json"
+$FavoriteLocationsFile = Join-Path $env:ProgramData 'PowerShell\favorites.json'
 
 # Ensure the storage file exists
 if (!(Test-Path $FavoriteLocationsFile)) {
